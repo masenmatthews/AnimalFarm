@@ -1,18 +1,24 @@
-import { Flashcard } from './../js/flashcard.js';
+import { Farm } from './../js/farm.js';
 
-describe('Flashcard', function() {
-  let flashcard = new Flashcard("History", "What president was assassinated in Dallas, Texas?", "JFK");
+describe('Farm', function() {
+  let horse = new Farm("horse");
 
   it('should recognize a flashcard object', function() {
-    expect(flashcard.category).toEqual("History");
-    expect(flashcard.question).toEqual("What president was assassinated in Dallas, Texas?");
-    expect(flashcard.answer).toEqual("JFK");
+    expect(horse.health).toEqual(10);
+    expect(horse.food).toEqual(10);
+    expect(horse.rest).toEqual(10);
   });
 
-  it('should return true if the answer is correct', function() {
-    expect(flashcard.question).toEqual("What president was assassinated in Dallas, Texas?");
-    expect(flashcard.answer).toEqual("A");
-    expect(flashcard.multipleChoiceRespond()).toEqual("Correct!");
+  it('should return health plus 2', function() {
+    horse.food = 5;
+    horse.feed();
+    expect(horse.food).toEqual(7);
+  });
+
+  it('should return health plus 2', function() {
+    horse.health = 6;
+    horse.medicate();
+    expect(horse.health).toEqual(8);
   });
 
 });

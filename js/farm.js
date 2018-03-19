@@ -14,21 +14,40 @@ export class Farm {
     }, 4500);
   }
 
-  feed() {
-    this.feed += 2;
-  }
-
   setSleep() {
     setInterval(() => {
       this.food--;
     }, 6000);
   }
 
+  checkHunger() {
+    let hunger = this.food;
+    return hunger;
+  }
+
+  checkSleep() {
+    let rest = this.rest;
+    return rest;
+  }
+
+  checkHealth() {
+    let health = this.health;
+    return health;
+  }
+
+  feed() {
+    this.food += 2;
+  }
+
   sleep() {
     this.rest += 5;
   }
 
-  sick() {
+  medicate() {
+    this.health += 2;
+  }
+
+  getSick() {
     let food = this.food;
     let rest = this.rest;
     let health = this.health;
@@ -45,13 +64,11 @@ export class Farm {
       }
     }
 
-  // die() {
-  //   let health = this.health;
-  //   if (health <= 2) {
-  //   }
-  // }
-
-    medicate() {
-      this.health += 2;
+  die() {
+    let health = this.health;
+    if (health <= 2) {
+      alert("GAME OVER - your animals are all dead.")
     }
+  }
+
 }
