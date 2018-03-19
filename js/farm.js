@@ -1,31 +1,13 @@
 export class Farm {
 
-  constructor(category, question, answer) {
-    this.category = category;
-    this.question = question;
-    this.answer = answer;
-  }
-
-  aIsCorrect() {
-    let question = this.question;
-    let answer = this.answer;
-    if (answer === "correct") {
-      alert("Correct!")
-    } else {
-      (answer === "false")
-      alert("False!")
-    }
+  constructor(animal) {
+    this.animal = animal;
+    this.hour = 0; 
+    this.health = 10;
+    this.food = 10;
+    this.rest = 10;
   }
 
 
-
-
-//   didYouGetEaten() {
-//   if (this.foodLevel > 0) {
-//     return false;
-//   } else {
-//     return true;
-//   }
-// }
 
 }
