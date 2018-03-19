@@ -4,6 +4,7 @@ export class Flashcard {
     this.category = category;
     this.question = question;
     this.answer = answer;
+    this.score = 0;
     this.timer = 0;
   }
 
@@ -12,6 +13,18 @@ export class Flashcard {
       this.timer--;
     }, 3000);
   }
+
+  restTime() {
+    setTimeout(() => {
+      alert("Select another card.")
+    }, 2000);
+  }
+
+  multipleChoiceRespond() {
+
+  }
+
+
 
 //   didYouGetEaten() {
 //   if (this.foodLevel > 0) {
