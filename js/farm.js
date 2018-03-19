@@ -1,4 +1,4 @@
-export class Flashcard {
+export class Farm {
 
   constructor(category, question, answer) {
     this.category = category;
