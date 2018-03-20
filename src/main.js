@@ -9,18 +9,20 @@ $(document).ready(function() {
 // Welcome screen
 
   $("form#name-input").submit(function(event) {
-    event.preventDefault();
+  event.preventDefault();
 
   let name = $("input#name").val();
   let animalName = $("input#animalName").val();
   let animal = new Farm(animalName);
 
+  animal.setHunger();
+  animal.setSleep();
 // Main interface
 
 $("#welcome-message").text("Welcome to Animal Farm, " + name + ". Don't let your animal, " + animalName + " die!");
 
 $("form#name-input").hide();
-$("#game-interface").fadeIn();
+$("#main-interface").fadeIn();
 
 // Buttons
 

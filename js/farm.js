@@ -16,8 +16,14 @@ export class Farm {
 
   setSleep() {
     setInterval(() => {
-      this.food--;
+      this.rest--;
     }, 6000);
+  }
+
+  isAnimalDead() {
+    if (this.rest === 0) {
+      return alert("Your animal is dead!")
+    }
   }
 
   checkHunger() {
