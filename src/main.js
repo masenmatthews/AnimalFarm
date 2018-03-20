@@ -32,6 +32,17 @@ $("button#rest").click(function() {
   animal.rest();
 });
 
+$("button#checkFood").click(function() {
+  animal.checkHunger();
+});
 
+$("button#checkRest").click(function() {
+  animal.checkRest();
+});
 
+$("button#checkHealth").click(function() {
+  animal.checkHealth();
+});
+
+});
 });
