@@ -51,16 +51,13 @@ export class Farm {
     let food = this.food;
     let rest = this.rest;
     let health = this.health;
-    if ((rest <= 6) && (food <= 7)) {
-      return health -= 3;
-      } else if
-        (food <= 5) {
-          return health -= 2;
-      } else if
-        (rest <= 3) {
-          return health -= 5;
+    if (rest >= 7 && food >= 7) {
+      alert("Your animal is healthy!");
+    } else if
+      (food <= 5 || rest <= 6) {
+        alert("Your animal's health is declining!");
       } else {
-        alert("Your animal is healthy!");
+        return alert("Your animal is not well!");
       }
     }
 

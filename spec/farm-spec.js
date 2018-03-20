@@ -27,11 +27,13 @@ describe('Farm', function() {
     expect(horse.rest).toEqual(8);
   });
 
-  it('should return health status', function() {
-    horse.food = 3;
-    horse.rest = 3;
-    horse.getSick();
-    expect(horse.health).toEqual()
-  })
+  // it('should return health status', function() {
+  //   let dyingHorse = new Farm("Agnes", 3, 3, 3);
+  //   dyingHorse.health = 3;
+  //   dyingHorse.food = 3;
+  //   dyingHorse.rest = 3;
+  //   dyingHorse.getSick();
+  //   expect(dyingHorse.health).toEqual("Your animal is not well!");
+  // });
 
 });
