@@ -15,11 +15,22 @@ $(document).ready(function() {
   let animalName = $("input#animalName").val();
   let animal = new Farm(animalName);
 
-  $("#welcome-message").text("Welcome to Animal Farm, " + name + ". Don't let your animal, " + animalName + " die!");
-  $("form#name-input").hide();
-  $("#game-interface").fadeIn();
+// Main interface
 
-  // Main interface
+$("#welcome-message").text("Welcome to Animal Farm, " + name + ". Don't let your animal, " + animalName + " die!");
+
+$("form#name-input").hide();
+$("#game-interface").fadeIn();
+
+// Buttons
+
+$("button#feed").click(function() {
+  animal.feed();
+});
+
+$("button#rest").click(function() {
+  animal.rest();
+});
 
 
 
