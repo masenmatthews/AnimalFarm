@@ -11,20 +11,20 @@ export class Farm {
   setHunger() {
     setInterval(() => {
       this.food--;
-    }, 4500);
+    }, 1000);
   }
 
   setSleep() {
     setInterval(() => {
       this.rest--;
-    }, 6000);
+    }, 1000);
   }
 
   isAnimalDead() {
-    if (this.rest === 0) {
-      return alert("Your animal is dead!")
+    if ((this.rest <= 1) || (this.food <= 1)) {
+       alert("Your animal is dead!")
+     }
     }
-  }
 
   checkHunger() {
     let hunger = this.food;
@@ -73,5 +73,4 @@ export class Farm {
       alert("GAME OVER - your animals are all dead.")
     }
   }
-
 }
