@@ -56,11 +56,11 @@ $(document).ready(function() {
     animal.isAnimalDead();
   });
 
-    $('#weatherButton').click(function() {
+    $('#weatherLocation').click(function() {
       let city = $('#location').val();
       $('#location').val("");
       $.ajax({
-        url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=[API-KEY-GOES-HERE]`,
+        url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=64c36da6cfd3e4e0bd5f8ac6d9af37d4`,
         type: 'GET',
         data: {
           format: 'json'
