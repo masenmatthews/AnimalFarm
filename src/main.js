@@ -59,20 +59,27 @@ $(document).ready(function() {
     $('#weatherLocation').click(function() {
       let city = $('#location').val();
       $('#location').val("");
-      $.ajax({
-        url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=64c36da6cfd3e4e0bd5f8ac6d9af37d4`,
-        type: 'GET',
-        data: {
-          format: 'json'
-        },
-        success: function(response) {
-          $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-          $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp}.`);
-        },
-        error: function() {
-          $('#errors').text("There was an error processing your request. Please try again.")
-        },
+
+      let promise = new Promise(function(resolve, reject) {
+      let request = new XMLHttpRequest();
+      let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=64c36da6cfd3e4e0bd5f8ac6d9af37d4`;
+        request.onload = function() {
+          if (this.status === 200) {
+            resolve(request.response);
+          } else {
+            reject(Error(request.statusText));
+          }
+        }
+        request.open("GET", url, true);
+        request.send();
+      });
+        promise.then(function(response) {
+          body = JSON.parse(response);
+          $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
+          $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
+        }, function(error) {
+          $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+        });
       });
     });
   });
-});
